@@ -14,3 +14,16 @@
 -- RegisterNUICallback("receive", function(data, cb)
 --     cb("OK")
 -- end)
+
+-- Citizen.CreateThread(function()
+--     while true do
+--         Citizen.Wait(1500)
+
+--         local isPauseMenuActive = IsPauseMenuActive()
+--         SendNUIMessage({
+--             action = "pauseMenuStatus",
+--             status = isPauseMenuActive
+--         })
+    
+--     end
+-- end)
