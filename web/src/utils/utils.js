@@ -1,4 +1,11 @@
-export const post = (endpoint, data) => {
+import { clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+const cn = (...inputs) => {
+  return twMerge(clsx(inputs))
+}
+
+const post = (endpoint, data) => {
 	// eslint-disable-next-line no-undef
 	fetch(`https://${GetParentResourceName()}/${endpoint}`, {
 		method: "POST",
@@ -10,3 +17,8 @@ export const post = (endpoint, data) => {
 		console.log(result);
 	}).catch(() => {});
 };
+
+export {
+	cn,
+	post
+}
