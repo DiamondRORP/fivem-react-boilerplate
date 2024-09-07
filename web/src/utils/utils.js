@@ -1,6 +1,11 @@
 import { clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 
+import resolveConfig from 'tailwindcss/resolveConfig'
+import tailwindConfig from '../../tailwind.config.js'
+
+const themeConfig = resolveConfig(tailwindConfig)
+
 const cn = (...inputs) => {
   return twMerge(clsx(inputs))
 }
@@ -20,5 +25,6 @@ const post = (endpoint, data) => {
 
 export {
 	cn,
+	themeConfig,
 	post
 }
